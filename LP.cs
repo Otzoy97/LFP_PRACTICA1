@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void txtArea_KeyPress(object sender, KeyPressEventArgs e)
+		private void TxtArea_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			String[] lineaCodigo = TxtArea.Lines;
 			int rowsCodigo = lineaCodigo.Length;
@@ -108,7 +108,7 @@ namespace WindowsFormsApp1
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
+		private void GuardarToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			//Obtiene el nombre del archivo
 			string input = Interaction.InputBox("Guardar...", "Escriba el nombre del archivo", "");
@@ -124,7 +124,7 @@ namespace WindowsFormsApp1
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void txtArea_KeyDown(object sender, KeyEventArgs e)
+		private void TxtArea_KeyDown(object sender, KeyEventArgs e)
 		{
 			if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down || e.KeyCode == Keys.Delete)
 			{
@@ -136,7 +136,7 @@ namespace WindowsFormsApp1
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+		private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Dispose();
 			Close();
@@ -146,21 +146,23 @@ namespace WindowsFormsApp1
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+		private void AbrirToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			//Crea una instancia de un cuadro de dialogo para abri archivos
-			OpenFileDialog dialog1 = new OpenFileDialog();
-			//Establece el directorio inicial
-			dialog1.InitialDirectory = "C:\\Users\\otzoy\\Desktop";
-			//Se crea y agrega un filtro para los archivos
-			//dialog1.Filter = "Archivos de Prueba (*.if) |*.if";
-			dialog1.FilterIndex = 0;
-			//Deja el directorio en el directorio en el que se cerro la 
-			//última vez que se abrio el cuadro de dialogo durante 
-			//el tiempo de ejecuacion
-			dialog1.RestoreDirectory = true;
-			//Evita que se seleccione mas de un archivo
-			dialog1.Multiselect = false;
+			OpenFileDialog dialog1 = new OpenFileDialog
+			{
+				//Establece el directorio inicial
+				InitialDirectory = "C:\\Users\\otzoy\\Desktop",
+				//Se crea y agrega un filtro para los archivos
+				Filter = "Archivos de Prueba (*.if) |*.if",
+				FilterIndex = 0,
+				//Deja el directorio en el directorio en el que se cerro la 
+				//última vez que se abrio el cuadro de dialogo durante 
+				//el tiempo de ejecuacion
+				RestoreDirectory = true,
+				//Evita que se seleccione mas de un archivo
+				Multiselect = false
+			};
 			//Hace visible el dialogo
 			//Si se presiona OK se ejecuta lo del if
 			if (dialog1.ShowDialog() == DialogResult.OK)
@@ -265,7 +267,7 @@ namespace WindowsFormsApp1
 								err.Enlistar(new Error(err.GetLargo() + 1, instruccion[1], -1, instruccion[0].Length + 2, "Nombre <PDF> Duplicado"));
 							}
 						}
-						catch (IndexOutOfRangeException e)
+						catch (IndexOutOfRangeException)
 						{
 							//Informa al error de un error (generico) sintáctico
 							TxtArea.Text += Environment.NewLine + "Se esperaba Nombre";
@@ -463,9 +465,11 @@ namespace WindowsFormsApp1
 				case "mostrar":
 					if (instruccion[1].Equals("ManualUsuario"))
 					{
+						new PDF().AbrirPDF(new Ruta().GetAbsolutePath("raiz/ManualUsuario.pdf"));
 					}
 					if (instruccion[1].Equals("ManualTecnico"))
 					{
+						new PDF().AbrirPDF(new Ruta().GetAbsolutePath("raiz/ManualTecnico.pdf"));
 					}
 					break;
 				//10
@@ -478,7 +482,7 @@ namespace WindowsFormsApp1
 					MessageBox.Show("201602782 - Sergio Fernando Otzoy Gonzalez","Lenguajes Formales y de Programación");
 					break;
 				default:
-					TxtArea.Text += Environment.NewLine + "<<"+ instruccion[0]+">> no se reconoce como instruccion. Consulte los Manuales -> <mostrar> <ManualUsuario> ó <ManualTecnico>";
+					TxtArea.Text += Environment.NewLine + "«"+ instruccion[0]+"» no se reconoce como instruccion. Consulte los Manuales -> <mostrar> <ManualUsuario> ó <ManualTecnico>";
 					break;
 			}
 			TxtArea.Text += Environment.NewLine;

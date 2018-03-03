@@ -21,6 +21,9 @@ namespace LFP_P1.IO
 		public bool imagen = false;
 		//Indicador de que tiene tabla
 		public bool tabla = false;
+		public PDF()
+		{
+		}
 		/// <summary>
 		/// Bob el Constructor :v
 		/// </summary>

@@ -13,7 +13,7 @@ namespace LFP_P1.Listas
 		//Enlaza los nodos
 		public Nodo siguiente;
 		//Enlaza los nodos
-		public Nodo anterior;
+		//public Nodo anterior;
 		//Guarda un objeto
 		public Object objeto;
 		/**

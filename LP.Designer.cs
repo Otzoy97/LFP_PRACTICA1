@@ -57,8 +57,8 @@
 			this.TxtArea.Size = new System.Drawing.Size(750, 182);
 			this.TxtArea.TabIndex = 0;
 			this.TxtArea.TabStop = false;
-			this.TxtArea.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtArea_KeyDown);
-			this.TxtArea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtArea_KeyPress);
+			this.TxtArea.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtArea_KeyDown);
+			this.TxtArea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtArea_KeyPress);
 			// 
 			// menuStrip1
 			// 
@@ -94,7 +94,7 @@
 			this.abrirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
 			this.abrirToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
 			this.abrirToolStripMenuItem.Text = "Abrir";
-			this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
+			this.abrirToolStripMenuItem.Click += new System.EventHandler(this.AbrirToolStripMenuItem_Click);
 			// 
 			// guardarToolStripMenuItem
 			// 
@@ -103,7 +103,7 @@
 			this.guardarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
 			this.guardarToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
 			this.guardarToolStripMenuItem.Text = "Guardar ";
-			this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
+			this.guardarToolStripMenuItem.Click += new System.EventHandler(this.GuardarToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator1
 			// 
@@ -117,7 +117,7 @@
 			this.salirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
 			this.salirToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
 			this.salirToolStripMenuItem.Text = "Salir";
-			this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+			this.salirToolStripMenuItem.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
 			// 
 			// TxtEditor
 			// 

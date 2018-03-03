@@ -84,7 +84,7 @@ namespace LFP_P1.IO
 						reader.Close();
 					}
 				}
-				catch (Exception e)
+				catch (Exception)
 				{
 					//Ocurre un error al cerrar el archivo
 					retorno += "Ocurrio un error al cerrar el archivo.";
@@ -218,7 +218,7 @@ namespace LFP_P1.IO
 					outputFile.Write(Texto.ToString());
 				}
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 			}
 			finally
@@ -234,7 +234,7 @@ namespace LFP_P1.IO
 						}
 					}
 				}
-				catch (Exception e)
+				catch (Exception)
 				{
 				}
 			}
